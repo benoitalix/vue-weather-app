@@ -1,0 +1,114 @@
+.weather-app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: lighten(#2b7dc9, 15%);
+  box-shadow: 0 90vh 30vh -100px #2b7dc9 inset;
+  transition: background-color 2s, box-shadow 2s;
+
+  .weather-dashboard__action button {
+    transition: background-color 2s;
+  }
+
+  // Sunny
+  &.c01d, &.c01n, &.c02d, &.c02n {
+    background-color: lighten($c-sunny, 15%);
+    box-shadow: 0 90vh 30vh -100px $c-sunny inset;
+    transition: background-color 2s, box-shadow 2s;
+
+    .weather-dashboard__action button {
+      background-color: $c-sunny;
+      transition: background-color 2s;
+
+      &:hover {
+        background-color: darken($c-sunny, 5%);
+      }
+    }
+  }
+
+  // Sunny cloudy
+  &.a01d, &.a02d, &.a03d, &.a04d, &.a05d, &.a06d,
+  &.c03d, &.c03n, &.s01d, &.s04d {
+    background-color: lighten($c-sunny-cloudy, 15%);
+    box-shadow: 0 90vh 30vh -100px $c-sunny-cloudy inset;
+    transition: background-color 2s, box-shadow 2s;
+
+    .weather-dashboard__action button {
+      background-color: $c-sunny-cloudy;
+      transition: background-color 2s;
+
+      &:hover {
+        background-color: darken($c-sunny-cloudy, 5%);
+      }
+    }
+  }
+
+  // Cloudy
+  &.c04d, &.c04n,
+  &.r05d, &.r05n,
+  &.s01n, &.s02d, &.s02n, &.s03d, &.s03n, &.s04n, &.s05d, &.s05n, &.s06d, &.s06n {
+    background-color: lighten($c-cloudy, 15%);
+    box-shadow: 0 90vh 30vh -100px $c-cloudy inset;
+    transition: background-color 2s, box-shadow 2s;
+
+    .weather-dashboard__action button {
+      background-color: $c-cloudy;
+      transition: background-color 2s;
+
+      &:hover {
+        background-color: darken($c-cloudy, 5%);
+      }
+    }
+  }
+
+  // Stormy
+  &.d01d, &.d01n, &.d02d, &.d02n, &.d03d, &.d03n, &.f01d, &.f01n,
+  &.r01d, &.r01n, &.r02d, &.r02n, &.r03d, &.r03n, &.r04d, &.r04n, &.r06d, &.r06n, 
+  &.t01d, &.t01n, &.t02d, &.t02n, &.t03d, &.t03n, &.t04d, &.t04n, &.t05d, &.t05n, 
+  &.u00d, &.u00n {
+    background-color: lighten($c-stormy, 15%);
+    box-shadow: 0 90vh 30vh -100px $c-stormy inset;
+    transition: background-color 2s, box-shadow 2s;
+
+    .weather-dashboard__action button {
+      background-color: $c-stormy;
+      transition: background-color 2s;
+
+      &:hover {
+        background-color: darken($c-stormy, 5%);
+      }
+    }
+  }
+
+  &__main {
+    width: 100%;
+    padding: 20px;
+    max-width: 760px;
+  }
+
+  &__form {
+    margin-top: -60px;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-align: center;
+  
+    @include breakpoint(md){
+      font-size: 50px;
+      text-align: left;
+    }
+  
+    &::before {
+      content: url("./assets/images/logo/weather_logo.svg");
+      position: relative;
+      top: 10px;
+      margin-right: 10px;
+    }
+  }
+}

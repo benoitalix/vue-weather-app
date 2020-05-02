@@ -1,0 +1,34 @@
+// ==============================================
+// VARIABLES - Colors
+// ==============================================
+
+//
+//  Base colors
+//  _____________________________________________
+
+$c-black:         #000000;
+$c-white:         #ffffff;
+$c-transparent:     transparent;
+
+//
+//  Project colors
+//  _____________________________________________
+
+$c-base:            $c-black;
+
+$-blue:           #23649e;
+$-blue-light:     #b8bfc5;
+
+$c-grey:          #484848;
+$c-grey-dark:     #171717;
+$c-grey-light:    #5b5b5b;
+
+$c-error:         #e84444;
+
+$c-box-shadow:    rgba(0,0,0,0.1);
+
+// Weather
+$c-sunny:           #ff7e00;
+$c-sunny-cloudy:    #607d8b;
+$c-cloudy:          #303c42;
+$c-stormy:          #19262d;

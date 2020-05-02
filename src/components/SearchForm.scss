@@ -1,0 +1,27 @@
+.search-form {
+  .form-entry {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px $c-box-shadow;
+
+    @include breakpoint(sm){
+      flex-direction: row;
+    }
+  }
+
+  label {
+    @extend .visually-hidden;
+  }
+
+  &__input {
+    flex: 1;
+    padding: 12px;
+    font-size: 1.6rem;
+    border: 0 none;
+    color: $c-grey;
+  }
+
+  &__submit {
+    @extend %button;
+  }
+}

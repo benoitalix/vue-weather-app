@@ -1,0 +1,58 @@
+// ==============================================
+// FORMS
+// ==============================================
+
+input {
+  // Reset
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-error {
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: white;
+  text-align: center;
+  background-color: $c-error;
+}
+
+.form-entry {
+  &.error {
+    box-shadow: 0 0 20px rgb(255, 0, 0, 0.4);
+
+    input {
+      color: $c-error;
+
+      // Chrome/Opera/Safari
+      &::-webkit-input-placeholder {
+        color: lighten($c-error, 0%);
+      }
+
+      // Firefox 19+
+      &::-moz-placeholder {
+          color: lighten($c-error, 0%);
+          opacity: 1;
+      }
+
+      // IE 10+
+      &:-ms-input-placeholder {
+          color: lighten($c-error, 0%);
+      }
+
+      // Firefox 18-
+      &:-moz-placeholder {
+          color: lighten($c-error, 0%);
+          opacity: 1;
+      }
+
+      &.disabled-skin,
+      &:disabled {
+          background-color: #F9FAFC;
+      }
+    }
+  }
+}

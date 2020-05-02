@@ -1,0 +1,86 @@
+// ==============================================
+// MIXINS
+// ==============================================
+
+//
+//  Font face
+//  _____________________________________________
+
+@mixin font-face($font_name, $file_name) {
+    @font-face {
+        font-family: $font_name;
+        src:
+                url('../fonts/#{$file_name}.woff2') format('woff2'),
+                url('../fonts/#{$file_name}.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+//
+//  Media queries
+//  _____________________________________________
+
+@mixin breakpoint($class) {
+    @if $class == xs {
+        @media (min-width: $extra-small) { @content; }
+    }
+
+    @else if $class == only-xs {
+        @media (max-width: $extra-small-max) { @content; }
+    }
+
+    @else if $class == sm {
+        @media (min-width: $small) { @content; }
+    }
+
+    @else if $class == only-sm {
+        @media (max-width: $small-max) { @content; }
+    }
+
+    @else if $class == md {
+        @media (min-width: $medium) { @content; }
+    }
+
+    @else if $class == only-md {
+        @media (max-width: $medium-max) { @content; }
+    }
+
+    @else if $class == lg {
+        @media (min-width: $large) { @content; }
+    }
+
+    @else if $class == only-lg {
+        @media (max-width: $large-max) { @content; }
+    }
+
+    @else if $class == xl {
+        @media (min-width: $extra-large) { @content; }
+    }
+
+    @else if $class == only-xl {
+        @media (max-width: $extra-large-max) { @content; }
+    }
+
+    @else {
+        @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+    }
+}
+
+//
+//  SEO friendly hidden
+//  _____________________________________________
+
+@mixin visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+}
+
+._hidden,
+.visually-hidden {
+    @include visually-hidden;
+}

@@ -1,0 +1,81 @@
+// ==============================================
+// COMMON
+// ==============================================
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $f-base;
+    color: $c-base;
+    font-size: 1.4em;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+a {
+    color: $c-base;
+    text-decoration: none;
+}
+
+address {
+    font-style: normal;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+strong {
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 10px;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+//
+//  Visible / Hidden class
+//  _____________________________________________
+
+* {
+    outline: none;
+    box-sizing: border-box;
+    &:active,
+    &:focus { outline: none; }
+}
+
+//
+//  Remove Background for autocomplete (only Webkit)
+//  _____________________________________________
+
+*:-webkit-autofill {
+    // @use !important due to style for remove other border on autofill
+    -webkit-box-shadow: 0 0 0 1000px $c-white inset;
+    -webkit-text-fill-color: $c-base;
+    &:hover,
+    &:focus {
+        // @use !important due to style for remove other border on autofill
+        border-bottom: 1px solid $c-base !important;
+    }
+}
